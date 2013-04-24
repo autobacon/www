@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  background-color: $rind;
+  color: $burnt;
+}
+
+body#splash h1 {
+  @include image-replacement(600px, 600px);
+  background-image: url(/images/splash_logo@1x.png);
+  
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+}
+
+a {
+  color: transparentize($bacon, 0.3);
+  border-bottom: 2px solid transparentize($bacon, 0.5);
+  text-decoration: none;
+}
+
+a:hover {
+  color: $bacon;
+  border-color: transparentize($bacon, 0.3);
+}
+
+div#content {
+  width: $main_width;
+  margin: 0 auto;
+}
+
+footer {
+  width: $main_width;
+  margin: 0 auto;
+  text-align: right;
+}
+
+body#splash footer {
+  @include box-sizing(border-box);
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -($main_width / 2);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  body#splash h1 {
+    background-image: url(/images/splash_logo@2x.png);
+  }
+}
+
+// smaller smartphone devices
+@media only screen and (max-device-width: 320px) {
+  body#splash h1 {
+    @include image-replacement(320px, 320px);
+    background-image: url(/images/splash_logo_mobile@1x.png);
+    margin-top: -160px;
+  }
+  
+  div#content { 
+    width: $mobile_width;
+  }
+  
+  footer {
+    width: $mobile_width;
+    padding-right: 10px;
+  }
+  
+  body#splash footer {
+    position: fixed;
+    bottom: 10px;
+    margin-left: -($mobile_width / 2); 
+  }
+}
+
+// full height on both types of iPhone, 3.5” and 4”
+@media only screen and (max-device-height: 568px) and (orientation: portrait) {
+  body#splash {
+    min-height: 504px;
+  }
+}
+
+@media only screen and (max-device-height: 480px) and (orientation: portrait) {
+  body#splash {
+    min-height: 416px;
+  }
+}
+
+// smaller smartphone devices, @2x
+@media only screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  body#splash h1 {
+    background-image: url(/images/splash_logo_mobile@2x.png);
+  }
+}

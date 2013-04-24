@@ -1,0 +1,29 @@
+require 'rake-pipeline-web-filters'
+require 'sass'
+
+output "public/assets/javascripts"
+input "app/assets/javascripts" do
+  match '**/*.js' do
+    concat [
+      "application.js"
+    ], "application.js"
+    if ENV['RAKEP_ENV'] == "production"
+      uglify
+    end
+  end
+end
+
+output "public/assets/stylesheets"
+input "app/assets/stylesheets" do
+  match "application.scss" do
+    scss :additional_load_paths => "assets/stylesheets"
+    concat "application.css"
+
+    if ENV['RAKEP_ENV'] == "production"
+      yui_css
+    end
+  end
+end
+
+# To build production assets:
+# $ RAKEP_ENV=production bundle exec rakep build

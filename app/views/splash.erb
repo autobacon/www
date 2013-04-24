@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%= partial :head %>
+
+<body id="splash">
+  <div id="content">
+    <h1><a href="/">AUTOBACON</a></h1>
+  </div>
+  <footer>
+    <strong>AUTOBACON</strong> &copy; <%= Time.now.year %>.</a>
+  </footer>
+  
+  <script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-2.0.0.min.js"></script>
+  <%= script "/assets/javascripts/application.#{settings.environment == :production ? 'min.js' : 'js'}" %>
+  <script type="text/javascript" src="//use.typekit.net/zhf8woj.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</body>
+</html>
