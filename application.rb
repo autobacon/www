@@ -11,7 +11,7 @@ class AutoBacon < Sinatra::Base
   APP_ROOT = settings.app_root
   
   before do
-    redirect request.url.sub('http://', 'http://www.'), 301 unless request.host =~ /autobacon.dev$|^www.autobacon.net$|^staging.autobacon.net$/
+    redirect request.url.sub('http://', 'http://www.'), 301 unless request.host =~ /autobacon.dev$|^www.autobacon.net$|^staging.autobacon.net$|^autobacon-staging.herokuapp.com$|$autobacon-production.herokuapp.com$/
 
   end
 end
