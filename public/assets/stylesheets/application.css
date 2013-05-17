@@ -13,7 +13,7 @@ body {
 /* line 7, /Users/bdarlow/Dropbox/Sites/autobacon/app/assets/stylesheets/default.scss */
 body#splash h1 {
   display: block;
-  text-indent: -999px;
+  text-indent: -9999px;
   background-repeat: no-repeat;
   background-size: 600px 600px;
   width: 600px;
@@ -71,7 +71,7 @@ body#splash footer {
   /* line 54, /Users/bdarlow/Dropbox/Sites/autobacon/app/assets/stylesheets/default.scss */
   body#splash h1 {
     display: block;
-    text-indent: -999px;
+    text-indent: -9999px;
     background-repeat: no-repeat;
     background-size: 320px 320px;
     width: 320px;
